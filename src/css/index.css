@@ -1,0 +1,71 @@
+.view-page {
+  width: auto;
+  position: absolute;
+  left: 200px;
+}
+.view-page .left-navbar {
+  width: 180px;
+  float: left;
+  position: fixed;
+  top: 50px;
+  bottom: 0;
+  background-color: #EAEDF1;
+}
+.view-page .left-navbar .nav-title {
+  width: 180px;
+  height: 70px;
+  line-height: 70px;
+  background: #D9DEE4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: bold;
+  text-indent: 20px;
+}
+.view-page .left-navbar .nav-list {
+  width: 100%;
+  /*position: absolute;
+      top: 70px;
+      left: 0px;
+      right: 0px;
+      bottom: 0px;*/
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+.view-page .left-navbar .nav-list ul {
+  list-style: none;
+  background-color: #eaedf1;
+}
+.view-page .left-navbar .nav-list ul li a {
+  width: 180px;
+  height: 40px;
+  line-height: 40px;
+  display: block;
+  color: #333;
+}
+.view-page .left-navbar .nav-list ul li a:hover {
+  background-color: #f4f6f8;
+}
+.view-page .left-navbar .nav-list ul li a .nav-icon {
+  width: 30px;
+  height: 40px;
+  float: left;
+  text-align: center;
+  font-size: 16px;
+  color: #333;
+}
+.view-page .left-navbar .nav-list ul li a .nav-li-title {
+  width: 138px;
+  float: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.view-page .left-navbar .nav-list ul li a .nav-item-title {
+  text-indent: 8px;
+}
+.view-page .left-navbar .nav-list ul li .active {
+  background-color: #fff;
+}
+
+/*# sourceMappingURL=map/index.css.map */
