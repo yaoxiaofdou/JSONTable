@@ -2,6 +2,15 @@
   width: auto;
   position: absolute;
   left: 200px;
+  /*.right-content{
+    width: 70%;
+    margin-left: 180px;
+    !*float: left;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 180px;*!
+  }*/
 }
 .view-page .left-navbar {
   width: 180px;
@@ -66,6 +75,18 @@
 }
 .view-page .left-navbar .nav-list ul li .active {
   background-color: #fff;
+}
+@media screen and (min-width: 1300px) {
+  .right-content {
+    width: 960px;
+    margin-left: 180px;
+  }
+}
+@media screen and (min-width: 1900px) {
+  .right-content {
+    width: 1500px;
+    margin-left: 180px;
+  }
 }
 
 /*# sourceMappingURL=map/index.css.map */
