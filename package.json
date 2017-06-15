@@ -7,21 +7,27 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "gulp": "^3.9.1",
-    "gulp-load-plugins": "*",
     "browser-sync": "*",
-    "gulp-less": "*",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "*",
     "gulp-clean": "*",
-    "gulp-livereload": "*",
-    "tiny-lr": "*",
-    "gulp-sourcemaps": "*",
-    "gulp-imagemin": "*",
-    "gulp-htmlmin": "*",
     "gulp-clean-css": "*",
-    "gulp-uglify": "*",
-    "gulp-concat": "*",
+    "gulp-concat": "^2.6.1",
+    "gulp-htmlmin": "*",
+    "gulp-imagemin": "*",
+    "gulp-less": "*",
+    "gulp-livereload": "*",
+    "gulp-load-plugins": "*",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-notify": "^3.0.0",
+    "gulp-plumber": "^1.1.0",
     "gulp-rename": "*",
-    "gulp-autoprefixer": "*"
+    "gulp-sourcemaps": "*",
+    "gulp-uglify": "*",
+    "imagemin-pngcrush": "^5.1.0",
+    "run-sequence": "^1.2.2",
+    "tiny-lr": "*"
   },
   "keywords": [
     "project-pc"

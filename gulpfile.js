@@ -1,95 +1,179 @@
 /**
- * Created by Administrator on 2017/5/5.
+ * Created by Administrator on 2016/3/30.
  */
-// 引入 gulp及组件
-var gulp    = require('gulp'),                 //基础库
-    $ = require('gulp-load-plugins')();   //自动require你在package.json中声明的依赖
-    browserSync = require("browser-sync");
-// HTML处理
-gulp.task('html', function() {
-    gulp.src('src/static/*.html')
-        // .pipe($.htmlmin({collapseWhitespace: true}))  //压缩html成一行
-        .pipe(gulp.dest('dist/static'))
-        .pipe(browserSync.reload({stream:true}))
-});
-// 字体图标处理
-gulp.task('fonts', function() {
-    gulp.src('src/fonts/*.*')
-    // .pipe($.htmlmin({collapseWhitespace: true}))  //压缩html成一行
-        .pipe(gulp.dest('dist/fonts'))
-        .pipe(browserSync.reload({stream:true}))
-});
+var gulp = require("gulp"),
+    less = require('gulp-less'),
+    browserSync = require('browser-sync'),
+    /*imagesmin = require('gulp-imagemin'),*/
+    // cache = require('gulp-cache'), // 缓存（图片压缩后不压缩）
+    del = require('del'),
+    autoprefixer = require('gulp-autoprefixer'),
+    plumber = require("gulp-plumber"),
+    runSequence = require('run-sequence'),
+    htmlmin = require('gulp-htmlmin'), //html压缩
+    imagemin = require('gulp-imagemin'), //图片压缩
+    pngcrush = require('imagemin-pngcrush'),
+    minifycss = require('gulp-minify-css'), //css压缩
+    uglify = require('gulp-uglify'), //js压缩
+    concat = require('gulp-concat'), //文件合并
+    rename = require('gulp-rename'), //文件更名
+    notify = require('gulp-notify'), //提示信息
+    sourcemaps = require('gulp-sourcemaps'); //sourcemaps
 
-// LESS样式处理
-gulp.task('less', function () {
-    gulp.src('src/less/*.less')
-        .pipe($.sourcemaps.init())
-        .pipe($.less())
-        .pipe($.autoprefixer({      //浏览器兼容前缀自动加上
-            browsers: ['last 2 versions', 'Android >= 4.0'],
-            cascade: true, //是否美化属性值 默认：true 像这样：
-            //-webkit-transform: rotate(45deg);
-            //        transform: rotate(45deg);
-            remove:true //是否去掉不必要的前缀 默认：true
-        }))
-        .pipe($.sourcemaps.write('map'))
-        .pipe(gulp.dest('src/css'))
-        .pipe(gulp.dest('dist/css'))
-        .pipe(browserSync.reload({stream:true}))
-});
+var config = {
+    root: './',
+    dist: "./dist/",
+    dist_css: "./dist/css/",
+    dist_data: './dist/data/',
+    dist_images: './dist/images/',
+    dist_js: './dist/js/',
+    dist_fonts: './dist/fonts/',
+    dist_html: './dist/static/',
+    src: 'src/',
+    src_less: './src/less/',
+    src_data: './src/data/',
+    src_css: './src/css/',
+    src_images: './src/images/',
+    src_js: './src/js/',
+    src_fonts: './src/fonts/',
+    src_html: './src/static/'
+};
 
-// CSS处理
-gulp.task('css', function() {
-    gulp.src('src/css/**/*.css')
-        .pipe($.autoprefixer())
-        .pipe($.cleanCss({compatibility: 'ie8'}))      //压缩css
-        .pipe(gulp.dest('dist/css'))
-        .pipe(browserSync.reload({stream:true}))
-});
-
-// 图片处理
-gulp.task('images', function(){
-    gulp.src('src/images/**/*')
-        .pipe($.imagemin())     //图片压缩(压缩比不大3M->2.8M)压缩png、jpg、gif、svg格式图片
-        .pipe(gulp.dest('dist/images'))
-        .pipe(browserSync.reload({stream:true}))
-})
-
-// js处理
-gulp.task('scripts', function () {
-    gulp.src('src/scripts/**/*.js')
-        // .pipe($.concat("all.js"))       //合并文件
-        // .pipe($.rename('all.min.js'))   //重命名
-        // .pipe($.uglify())       //压缩js
-        .pipe(gulp.dest('dist/scripts'))
-        .pipe(browserSync.reload({stream:true}))
-});
-
-// 清空图片、样式、js
-gulp.task('clean', function() {
-    gulp.src(['dist/fonts', 'dist/css', 'dist/scripts', 'dist/images'], {read: false})
-        .pipe($.clean());
-});
-
-// 默认任务 清空图片、样式、js并重建 运行语句 gulp
-gulp.task('default', function(){
-    gulp.start('serve', 'watch');
-});
-
-gulp.task('serve', function() {
+//start browserSync server
+gulp.task('browserSync', function() {
     browserSync({
         server: {
-            baseDir: './src/'
+            baseDir: [config.root]
         }
-    });
+    })
 });
 
-// 监听任务 运行语句 gulp watch
-gulp.task('watch',function(){
-    gulp.watch('src/static/*.html', ["html"]);  // 监听html
-    gulp.watch('src/fonts/*.*', ["fonts"]);  // 监听less
-    gulp.watch('src/less/*.less', ["less"]);  // 监听less
-    gulp.watch('src/css/**/*.css', ["css"]);  // 监听css
-    gulp.watch('src/images/**/*', ["images"]);  // 监听images
-    gulp.watch('src/scripts/**/*.js', ["scripts"]);  // 监听js
+//复制src目录下的fonts文件夹到dist目录下的fonts文件夹
+gulp.task('fonts', function() {
+    return gulp.src(config.src_fonts + "**.*") //fonts的格式要为 **.*
+        .pipe(notify("fonts"))
+        .pipe(gulp.dest(config.dist_fonts))
+
+});
+
+//压缩图片
+gulp.task('imagemin', function() {
+    return gulp.src(config.src_images + '**/*.*')
+        .pipe((imagemin()))
+        .pipe(gulp.dest(config.dist_images))
+});
+
+// 压缩html
+gulp.task('html', function() {
+    return gulp.src(config.src_html + '*.html') // 目标文件
+        .pipe(htmlmin({
+            collapseWhitespace: true
+        }))
+        .pipe(gulp.dest(config.dist_html)) //  输出文件
+        .pipe(notify({
+            message: 'html task ok'
+        }));
+
+});
+
+// 合并、压缩js文件
+gulp.task('js', function() {
+    return gulp.src(config.src_js + '**/*.js')
+        //.pipe(concat('all.js'))
+        //.pipe(sourcemaps.init())
+        //.pipe(uglify())
+        //.pipe(sourcemaps.write())
+        .pipe(gulp.dest(config.dist_js))
+        .pipe(notify({
+            message: 'js task ok'
+        }));
+});
+
+// 压缩js
+gulp.task('minjs',function(){
+    return gulp.src(config.src_js + '**/*.js')
+    .pipe(uglify())
+    //.pipe(rename({suffix:'.min'}))
+    .pipe(gulp.dest(config.dist_js))
+    .pipe(notify({
+        message: 'js task ok'
+    }))
+})
+
+// //复制src目录下的static文件夹到dist目录下的static文件夹
+// gulp.task('html',function(){
+//    return gulp.src(config.src_html + "*.html")
+//        .pipe(gulp.dest(config.dist_html));
+// });
+
+// //复制src目录下的js文件夹到dist目录下的js文件夹
+// gulp.task('script',function(){
+//     return gulp.src(config.src_js + "**/*.js")
+//         .pipe(gulp.dest(config.dist_js))
+// });
+
+//编译less文件
+gulp.task('less', function() {
+    browserSync.notify("正在编译less");
+    return gulp.src(config.src_less + "theme.less")
+        .pipe(sourcemaps.init())
+        .pipe(plumber())
+        .pipe(less())
+        .pipe(autoprefixer('last 10 versions', 'ie 8'))
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest(config.src_css))
+        .pipe(notify("less编译完成"))
+        .pipe(browserSync.reload({
+            stream: true
+        }))
+});
+
+// 合并、压缩、重命名css
+gulp.task('css', function() {
+    return gulp.src(config.src_css + '**/*.css')
+        // .pipe(concat('main.css'))    合并CSS
+        .pipe(gulp.dest(config.src_css)) //  原始文件目录
+        // .pipe(rename({ suffix: '.min' }))    //  加压缩文件后缀
+        .pipe(minifycss())
+        .pipe(gulp.dest(config.dist_css)) //  输出目录
+        .pipe(notify({
+            message: 'css task ok'
+        }));
+});
+
+// 引导data文件
+gulp.task('data', function() {
+    return gulp.src(config.src_data + '*')
+        .pipe(gulp.dest(config.dist_data)) //  输出目录
+        .pipe(notify({
+            message: 'data task ok'
+        }));
+});
+
+//清除生产文件
+// gulp.task('clean',function(){
+//     return del.sync('dist').then(function(cb){
+//     return cache.clearAll(cb);
+//     })
+// });
+
+gulp.task('clean:dist', function() {
+    return del.sync(['dist/**/*', '!dist/images']);
+});
+
+gulp.task('watch', function() {
+    gulp.watch(config.src_less + "**/*.less", ['less']); //监听less变化
+    gulp.watch(config.root + "*.html", browserSync.reload); //监听主目录文件夹下的html变化
+    gulp.watch(config.src_html + "*.html", browserSync.reload); //监听src/static目录下的html变化
+    gulp.watch(config.src_js + "*.js", browserSync.reload); //监听src/js目录下的js变化
+    // gulp.watch(config.src_images, function(){  //监听所有image
+    //     gulp.start('images');             
+    // });
+});
+
+gulp.task('default', function(callback) {
+    runSequence(['less', 'browserSync', 'watch'], callback); //默认的开发任务，包括编译css，自动刷新浏览器和监听任务
+});
+gulp.task('build', function(callback) {
+    runSequence('clean:dist', ['css', 'imagemin', 'minjs', 'fonts','data','html'], callback); //默认的部署到生产环境的任务命令
 });

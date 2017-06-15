@@ -17,21 +17,76 @@ $(function () {
         // $this.next().toggle(1000)
     })
 
-    $(".fold-menu").on("click", function () {
+    // 一级目录
+    function changeLevelOne(){
         var $this_i = $(this).find("i");
         var $menu = $(".menu");
-        if($menu.hasClass("close-menu")){
-            $menu.removeClass("close-menu");
-            $this_i.removeClass("icon-zhankai-caidan").addClass("icon-zhedietubiao-yizhedie");
-            setSpan(true)
-            $(".view-page").removeClass("view-page-left");
-        } else {
-            $menu.addClass("close-menu");
-            $this_i.removeClass("icon-zhedietubiao-yizhedie").addClass("icon-zhankai-caidan");
-            setSpan(false)
-            $(".view-page").addClass("view-page-left");
-        }
-    })
+        var $levTwo = $(".menu-ul");
+        var $content = $(".content");
+        $(".fold-menu").on("click", function () {
+            if($menu.hasClass("close-menu")){
+
+                $menu.removeClass("close-menu");
+                $this_i.removeClass("icon-zhankai-caidan").addClass("icon-zhedietubiao-yizhedie");
+                setSpan(true)
+                if($levTwo.hasClass("hids-menu-ul")){
+                    $content.addClass("view-page-leftTwo");
+                    $content.removeClass('view-page-left')
+                }else{
+                    $content.removeClass('view-page-leftThree')
+                }
+
+            } else {
+
+                $menu.addClass("close-menu");
+                $this_i.removeClass("icon-zhedietubiao-yizhedie").addClass("icon-zhankai-caidan");
+                setSpan(false)
+                if($levTwo.hasClass("hids-menu-ul")){
+                    $content.removeClass("view-page-leftTwo");
+                    $content.addClass('view-page-left')
+                }else{
+                    $content.addClass('view-page-leftThree')
+                }
+
+            }
+        })
+    }
+    changeLevelOne();
+
+    /**
+     *  收缩目录
+     **/
+    function hideTwoLevelMenu(){
+        // 收缩二级目录
+        var $menu = $(".menu");
+        var $panel = $(".menu-ul");
+        var $erBtn = $(".menu-ul-min");
+        var $content = $('.content');
+        $erBtn.on("click",function(){
+
+            if($panel.hasClass("hids-menu-ul")){
+                $panel.removeClass("hids-menu-ul");
+
+                if($menu.hasClass("close-menu")){
+                    $content.addClass("view-page-leftThree");
+                    $content.removeClass("view-page-left");
+                }else{
+                    $content.removeClass("view-page-leftTwo");
+                }
+                
+            }else{
+                $panel.addClass("hids-menu-ul");
+
+                if($menu.hasClass("close-menu")){
+                    $content.removeClass("view-page-leftThree");
+                    $content.addClass("view-page-left");
+                }else{
+                    $content.addClass("view-page-leftTwo");
+                }
+            }
+        })
+    }
+    hideTwoLevelMenu();
 
     initMenuTip();
     function initMenuTip() {
