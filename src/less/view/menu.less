@@ -9,7 +9,7 @@
   .menu-nav{
     width:200px;
     position: absolute;
-    z-index: 2;
+    z-index: 10;
     top: 0;
     bottom: 0;
     left: 0;
@@ -90,6 +90,7 @@
     top:0;
     left:200px;
     bottom: 0;
+    z-index: 2;
     background-color: #EAEDF1;
     transition: 0.7s;
     .menu-ul-min{
@@ -100,7 +101,23 @@
       right:0;
       bottom:0;
       margin:auto;
-      transition: 0.7s;
+      transition: 0.3s;
+      background: #fff;
+      color: #000;
+      line-height: 40px;
+      border-bottom: 1px solid #c3bebe;
+      border-left: 1px solid #c3bebe;
+      border-top: 1px solid #c3bebe;
+      cursor:pointer;
+      i{
+        transition: 0.3s;
+      }
+      &:hover{
+        width:24px;
+        i{
+          font-size:20px;
+        }
+      }
     }
     .nav-title{
       width: 180px;
@@ -186,7 +203,14 @@
 .hids-menu-ul{
   transform: translateX(-180px);
   .menu-ul-min{
-        right: -20px !important;
+      right: -18px !important;
+      &:hover{
+        width:24px;
+        right: -24px !important;
+        i{
+          font-size:20px;
+        }
+      }
   }
 }
 
