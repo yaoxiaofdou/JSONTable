@@ -2,20 +2,48 @@
  * Created by Administrator on 2017/6/16.
  */
 $(function () {
-    $(".add").on("click", function () {
-        $.confirm({
-            title: 'Confirm!',
-            content: 'Confirm! Confirm! Confirm!',
-            confirmButtonClass: 'btn-info',     //按钮样式
-            cancelButtonClass: 'btn-danger',    //按钮样式
-            confirmButton: '确定',
-            cancelButton: '取消',
-            confirm: function(){
-                alert('the user clicked confirm');
+    $('#defaultForm').bootstrapValidator({
+        feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            confirmPassword: {
+                validators: {
+                    notEmpty: {
+                        message: 'The first name is required and cannot be empty'
+                    }
+                }
             },
-            cancel: function(){
-                // alert('the user clicked cancel')
+            username: {
+                message: 'The username is not valid',
+                validators: {
+                    notEmpty: {
+                        message: 'The username is required and cannot be empty'
+                    }
+                }
             }
-        });
+        }
+    }).on('success.form.bv', function(e) {
+        e.preventDefault();
+
+        // Get the form instance
+        var $form = $(e.target);
+
+        // Get the BootstrapValidator instance
+        var bv = $form.data('bootstrapValidator');
+
+        // Use Ajax to submit form data
+        $.post($form.attr('action'), $form.serialize(), function(result) {
+            console.log(result);
+        }, 'json');
+    });
+
+   /* $(".confirm").on("click", function () {
+        $('#defaultForm').bootstrapValidator('validate')
+    })*/
+    $(".cancel").on("click", function () {
+        $('#defaultForm').data('bootstrapValidator').resetForm(true);
     })
 })
