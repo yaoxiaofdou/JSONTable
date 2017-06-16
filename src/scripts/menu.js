@@ -61,12 +61,13 @@ $(function () {
         var $menu = $(".menu");
         var $panel = $(".menu-ul");
         var $erBtn = $(".menu-ul-min");
+        var $erBtn_icon = $(".menu-ul-min > i");
         var $content = $('.content');
         $erBtn.on("click",function(){
 
             if($panel.hasClass("hids-menu-ul")){
                 $panel.removeClass("hids-menu-ul");
-
+                $erBtn_icon.attr("class","iconfont icon-shousuo");
                 if($menu.hasClass("close-menu")){
                     $content.addClass("view-page-leftThree");
                     $content.removeClass("view-page-left");
@@ -76,7 +77,7 @@ $(function () {
                 
             }else{
                 $panel.addClass("hids-menu-ul");
-
+                $erBtn_icon.attr("class","iconfont icon-shousuo1");
                 if($menu.hasClass("close-menu")){
                     $content.removeClass("view-page-leftThree");
                     $content.addClass("view-page-left");

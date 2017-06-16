@@ -26,7 +26,7 @@ var config = {
     dist_css: "./dist/css/",
     dist_data: './dist/data/',
     dist_images: './dist/images/',
-    dist_js: './dist/js/',
+    dist_js: './dist/scripts/',
     dist_fonts: './dist/fonts/',
     dist_html: './dist/static/',
     src: 'src/',
@@ -34,7 +34,7 @@ var config = {
     src_data: './src/data/',
     src_css: './src/css/',
     src_images: './src/images/',
-    src_js: './src/js/',
+    src_js: './src/scripts/',
     src_fonts: './src/fonts/',
     src_html: './src/static/'
 };
