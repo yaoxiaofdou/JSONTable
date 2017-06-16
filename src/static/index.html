@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="../css/plugins/bootstrap.min.css">
     <link rel="stylesheet" href="../css/plugins/normalize.css">
     <link rel="stylesheet" href="../css/plugins/tipsy.css">
+    <link rel="stylesheet" href="../css/plugins/jquery-confirm.css">
     <link rel="stylesheet" href="../css/theme.css">
     <link rel="stylesheet" href="//at.alicdn.com/t/font_1x3x6tpuz1moyldi.css">
 </head>
@@ -184,21 +185,86 @@
 </div>
 <div class="section">
     <div class="content">
-        <table class="table">
-            <tbody>
+    <div class="col-sm-12">
+        <div class="panel">
+            <div class="page-header">
+                <button type="button" class="btn btn-success add">添加</button>
+            </div>
+            <!-- Table -->
+            <table class="table">
+                <thead>
+                <tr><th>接口模块</th><th>接口名称</th><th>接口编号</th><th>操作</th></tr>
+                </thead>
+                <tbody>
                 <tr>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>4</td>
+                    <td>商品</td>
+                    <td>接口名称</td>
+                    <td>接口编码</td>
+                    <td>
+                        <button type="button" class="btn btn-success">模拟请求</button>&nbsp;
+                        <button type="button" class="btn btn-primary">查看</button>&nbsp;
+                        <button type="button" class="btn btn-info">编辑</button>&nbsp;
+                        <button type="button" class="btn btn-warning">删除</button>
+                    </td>
                 </tr>
-            </tbody>
-        </table>
+                <tr>
+                    <td>商品</td>
+                    <td>接口名称</td>
+                    <td>接口编码</td>
+                    <td>
+                        <button type="button" class="btn btn-success">模拟请求</button>&nbsp;
+                        <button type="button" class="btn btn-primary">查看</button>&nbsp;
+                        <button type="button" class="btn btn-info">编辑</button>&nbsp;
+                        <button type="button" class="btn btn-warning">删除</button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-lg-6 col-lg-offset-5">
+            <nav aria-label="">
+                <ul class="pagination pagination-lg">
+                    <li><a href="#" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
+                    <li class="active"><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li><a href="#" aria-label="Next"><span aria-hidden="true">»</span></a></li>
+                </ul>
+            </nav>
+        </div>
     </div>
+    </div>
+</div>
+<div class="pop-window">
+    <form class="form-horizontal">
+        <div class="form-group has-success has-feedback">
+            <label class="control-label col-sm-3" for="inputSuccess3">Input with success</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" id="inputSuccess3" aria-describedby="inputSuccess3Status">
+                <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+                <span id="inputSuccess3Status" class="sr-only">(success)</span>
+            </div>
+        </div>
+        <div class="form-group has-success has-feedback">
+            <label class="control-label col-sm-3" for="inputGroupSuccess2">Input group with success</label>
+            <div class="col-sm-9">
+                <div class="input-group">
+                    <span class="input-group-addon">@</span>
+                    <input type="text" class="form-control" id="inputGroupSuccess2" aria-describedby="inputGroupSuccess2Status">
+                </div>
+                <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+                <span id="inputGroupSuccess2Status" class="sr-only">(success)</span>
+            </div>
+        </div>
+    </form>
 </div>
 <script src="../scripts/plugins/jquery-2.1.1.min.js"></script>
 <script src="../scripts/plugins/bootstrap.min.js"></script>
 <script src="../scripts/plugins/jquery.tipsy.js"></script>
+<script src="../scripts/plugins/jquery-confirm.js"></script>
 <script src="../scripts/menu.js"></script>
+<script src="../scripts/index.js"></script>
 </body>
 </html>
