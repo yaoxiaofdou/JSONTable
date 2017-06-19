@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../css/plugins/jquery-confirm.css">
     <link rel="stylesheet" href="../css/theme.css">
     <!-- iconfont 图标 -->
-    <link rel="stylesheet" href="//at.alicdn.com/t/font_4svyvopmesbawcdi.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_9nf0v6hav0urqkt9.css">
 </head>
 <body>
 <div class="header">
@@ -190,56 +190,209 @@
 </div>
 <div class="section">
     <div class="content">
-    <div class="col-sm-12">
-        <div class="panel">
-            <div class="page-header">
-                <button type="button" class="btn btn-success add">添加</button>
+        <div class="col-sm-12">
+            <div class="panel">
+                <div class="page-header">
+                    <button type="button" class="btn btn-success add">添加</button>
+                </div>
+                <!-- Table -->
+                <table class="table">
+                    <thead>
+                    <tr><th>接口模块</th><th>接口名称</th><th>接口编号</th><th>操作</th></tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>商品</td>
+                        <td>接口名称</td>
+                        <td>接口编码</td>
+                        <td>
+                            <button type="button" class="btn btn-success">模拟请求</button>&nbsp;
+                            <button type="button" class="btn btn-primary">查看</button>&nbsp;
+                            <button type="button" class="btn btn-info">编辑</button>&nbsp;
+                            <button type="button" class="btn btn-warning">删除</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>商品</td>
+                        <td>接口名称</td>
+                        <td>接口编码</td>
+                        <td>
+                            <button type="button" class="btn btn-success">模拟请求</button>&nbsp;
+                            <button type="button" class="btn btn-primary">查看</button>&nbsp;
+                            <button type="button" class="btn btn-info">编辑</button>&nbsp;
+                            <button type="button" class="btn btn-warning">删除</button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
             </div>
-            <!-- Table -->
-            <table class="table">
-                <thead>
-                <tr><th>接口模块</th><th>接口名称</th><th>接口编号</th><th>操作</th></tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>商品</td>
-                    <td>接口名称</td>
-                    <td>接口编码</td>
-                    <td>
-                        <button type="button" class="btn btn-success">模拟请求</button>&nbsp;
-                        <button type="button" class="btn btn-primary">查看</button>&nbsp;
-                        <button type="button" class="btn btn-info">编辑</button>&nbsp;
-                        <button type="button" class="btn btn-warning">删除</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>商品</td>
-                    <td>接口名称</td>
-                    <td>接口编码</td>
-                    <td>
-                        <button type="button" class="btn btn-success">模拟请求</button>&nbsp;
-                        <button type="button" class="btn btn-primary">查看</button>&nbsp;
-                        <button type="button" class="btn btn-info">编辑</button>&nbsp;
-                        <button type="button" class="btn btn-warning">删除</button>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
+            <div class="col-lg-6 col-lg-offset-5">
+                <nav aria-label="">
+                    <ul class="pagination pagination-lg">
+                        <li><a href="#" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
+                        <li class="active"><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li><a href="#" aria-label="Next"><span aria-hidden="true">»</span></a></li>
+                    </ul>
+                </nav>
+            </div>
         </div>
-        <div class="col-lg-6 col-lg-offset-5">
-            <nav aria-label="">
-                <ul class="pagination pagination-lg">
-                    <li><a href="#" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
-                    <li class="active"><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                    <li><a href="#" aria-label="Next"><span aria-hidden="true">»</span></a></li>
+
+        <!-- 面板 -->
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <!-- 表格 组件 -->
+                <div class="TableListComponent">
+                    <table class="table table-striped table-condensed table-hover">
+                        <thead>
+                            <tr>
+                                <th>
+                                    
+                                </th>
+                                <th>快照</th>
+                                <th>磁盘</th>
+                                <th>容量</th>
+                                <th>创建时间</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table__tbody">
+                            <tr>
+                                <td>
+                                    <label>
+                                        <i class="iconfont icon-wenjianjia"></i>0002
+                                    </label>
+                                </td>
+                                <td>K002123</td>
+                                <td>C</td>
+                                <td>1024MB</td>
+                                <td>2017/06/16</td>
+                                <td>
+                                    <a href="###" class="table_operation">获取地址</a>
+                                    <a href="###" class="table_operation">设置HTTP头</a>
+                                    <a href="###" class="table_operation">删除</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label>
+                                        <i class="iconfont icon-shangchuan"></i>ssss
+                                    </label>
+                                </td>
+                                <td>K002123</td>
+                                <td>C</td>
+                                <td>1024MB</td>
+                                <td>2017/06/16</td>
+                                <td>
+                                    <a href="###" class="table_operation">获取地址</a>
+                                    <a href="###" class="table_operation">设置HTTP头</a>
+                                    <a href="###" class="table_operation">删除</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label>
+                                        <input type="checkbox" name="items"/>
+                                    </label>
+                                </td>
+                                <td>K002123</td>
+                                <td>C</td>
+                                <td>1024MB</td>
+                                <td>2017/06/16</td>
+                                <td>
+                                    <a href="###" class="table_operation">获取地址</a>
+                                    <a href="###" class="table_operation">设置HTTP头</a>
+                                    <a href="###" class="table_operation">删除</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label>
+                                        <input type="checkbox" name="items"/>
+                                    </label>
+                                </td>
+                                <td>K002123</td>
+                                <td>C</td>
+                                <td>1024MB</td>
+                                <td>2017/06/16</td>
+                                <td>
+                                    <a href="###" class="table_operation">获取地址</a>
+                                    <a href="###" class="table_operation">设置HTTP头</a>
+                                    <a href="###" class="table_operation">删除</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- 分页 -->
+                    <nav aria-label="Page navigation" style="text-align:center;">
+                        <div class="col-lg-12">
+                            <div class="col-lg-1">
+                                <label class="table__alldiv">
+                                    <input type="checkbox" name="allcheckbox" class="table__all" id="table__all"/>全选
+                                </label>
+                            </div>
+                            <div class="col-lg-5 col-lg-offset-4">
+                                <ul class="pagination qishon_Pagination">
+                                    <li>
+                                        <a href="#" aria-label="Previous">
+                                            <span aria-hidden="true">&laquo;</span>
+                                        </a>
+                                        </li>
+                                        <li><a href="#">1</a></li>
+                                        <li><a href="#">2</a></li>
+                                        <li><a href="#">3</a></li>
+                                        <li><a href="#">4</a></li>
+                                        <li><a href="#">5</a></li>
+                                        <li>
+                                        <a href="#" aria-label="Next">
+                                            <span aria-hidden="true">&raquo;</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+            <div class="panel-body">
+                <!-- tab 组件 -->
+                <ul id="myTab" class="nav nav-tabs">
+                    <li class="active">
+                        <a href="#aaaa" data-toggle="tab">aaaa</a>
+                    </li>
+                    <li>
+                        <a href="#bbbb" data-toggle="tab">bbbb</a>
+                    </li>
+                    <li>
+                        <a href="#dddd" data-toggle="tab">dddd</a>
+                    </li>
+                    <li>
+                        <a href="#cccc" data-toggle="tab">cccc</a>
+                    </li>
                 </ul>
-            </nav>
+                <div id="myTabContent" class="tab-content">
+                    <div class="tab-pane fade in active" id="aaaa">
+                        <p>该吃吃，该喝喝</p>
+                    </div>
+                    <div class="tab-pane fade" id="bbbb">
+                        <p>iOS 是一个由苹果公司开发和发布的手机操作系统。最初是于 2007 年首次发布 iPhone、iPod Touch 和 Apple 
+                            TV。iOS 派生自 OS X，它们共享 Darwin 基础。OS X 操作系统是用在苹果电脑上，iOS 是苹果的移动版本。</p>
+                    </div>
+                    <div class="tab-pane fade" id="dddd">
+                        <p>jMeter 是一款开源的测试软件。它是 100% 纯 Java 应用程序，用于负载和性能测试。</p>
+                    </div>
+                    <div class="tab-pane fade" id="cccc">
+                        <p>Enterprise Java Beans（EJB）是一个创建高度可扩展性和强大企业级应用程序的开发架构，部署在兼容应用程序服务器（比如 JBOSS、Web Logic 等）的 J2EE 上。
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
+
+
     </div>
 </div>
 <div class="pop-window">
@@ -265,69 +418,6 @@
         </div>
     </form>
 
-</div>
-
-<!-- 表格 组件 -->
-<div class="TableListComponent">
-    <table class="table table-striped table-bordered table-condensed table-hover">
-        <thead>
-            <tr>
-                <th>
-                    <label>
-                        <input type="checkbox" name="allcheckbox" id="table__all"/>
-                    </label>
-                </th>
-                <th>快照</th>
-                <th>磁盘</th>
-                <th>容量</th>
-                <th>创建时间</th>
-            </tr>
-        </thead>
-        <tbody class="table__tbody">
-            <tr>
-                <td>
-                    <label>
-                        <input type="checkbox" name="items"/>
-                    </label>
-                </td>
-                <td>K002123</td>
-                <td>C</td>
-                <td>1024MB</td>
-                <td>2017/06/16</td>
-            </tr>
-            <tr>
-                <td>
-                    <label>
-                        <input type="checkbox" name="items"/>
-                    </label>
-                </td>
-                <td>K002123</td>
-                <td>C</td>
-                <td>1024MB</td>
-                <td>2017/06/16</td>
-            </tr>
-        </tbody>
-    </table>
-    <!-- 分页 -->
-    <nav aria-label="Page navigation" style="text-align:center;">
-        <ul class="pagination">
-            <li>
-            <a href="#" aria-label="Previous">
-                <span aria-hidden="true">&laquo;</span>
-            </a>
-            </li>
-            <li><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">5</a></li>
-            <li>
-            <a href="#" aria-label="Next">
-                <span aria-hidden="true">&raquo;</span>
-            </a>
-            </li>
-        </ul>
-    </nav>
 </div>
 
 <script src="../scripts/plugins/jquery-2.1.1.min.js"></script>
