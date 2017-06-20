@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../css/plugins/bootstrapValidator.min.css">
     <link rel="stylesheet" href="../css/theme.css">
     <!-- iconfont 图标 -->
-    <!--<link rel="stylesheet" href="//at.alicdn.com/t/font_9nf0v6hav0urqkt9.css">-->
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_fg28s3h0sqy0t3xr.css">
 </head>
 
 <body>
@@ -490,6 +490,139 @@
                         <!-- 两列 布局 end -->
                     </div>
                 </div>
+                <div class="panel-body">
+                    <div class="ChangeTableComponent">
+                        <div class="ChangeTableComponent__header">
+                            <h5>Bucket</h5>
+                            <a class="ChangeTableComponent__changeBtn">
+                                <!-- 列表 -->
+                                <i class="iconfont icon-liebiao1"></i>
+                                <!-- 块显 -->
+                                <!--<i class="iconfont icon-liebiao"></i>-->
+                            </a>
+                        </div>
+                        <!-- 表格显示数据列表 -->
+                        <div class="ChangeTableComponent__content_list">
+                            
+                            <!-- table change 组件 -->
+                            <div class="TableListComponent">
+                                <div class="row">
+                                    <table class="table table-condensed table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>名称</th>
+                                                <th>地域</th>
+                                                <th>创建时间</th>
+                                                <th>存储时间</th>
+                                                <th>操作</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="table__tbody">
+                                            <tr>
+                                                <td>
+                                                    <label>
+                                                        demo-a-1
+                                                    </label>
+                                                </td>
+                                                <td>华东 2</td>
+                                                <td>2016-10-14 10:24:23</td>
+                                                <td>标准存储</td>
+                                                <td>
+                                                    <a href="###" class="table_operation">浏览</a>
+                                                    <a href="###" class="table_operation">删除</a>
+                                                    <a href="###" class="table_operation">设置</a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <!-- 分页 -->
+                                    <nav aria-label="Page navigation" style="text-align:center;">
+                                        <div class="col-md-12 col-lg-12">
+                                            <div class="col-md-2 col-lg-1">
+                                                <label class="table__alldiv">
+                                                <input type="checkbox" name="allcheckbox" class="table__all" id="table__all"/>全选
+                                            </label>
+                                            </div>
+                                            <div class="col-md-5 col-lg-5 col-lg-offset-4 col-md-offset-4">
+                                                <ul class="pagination qishon_Pagination">
+                                                    <li>
+                                                        <a href="#" aria-label="Previous">
+                                                        <span aria-hidden="true">&laquo;</span>
+                                                    </a>
+                                                    </li>
+                                                    <li><a href="#">1</a></li>
+                                                    <li><a href="#">2</a></li>
+                                                    <li><a href="#">3</a></li>
+                                                    <li><a href="#">4</a></li>
+                                                    <li><a href="#">5</a></li>
+                                                    <li>
+                                                        <a href="#" aria-label="Next">
+                                                        <span aria-hidden="true">&raquo;</span>
+                                                    </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 详情块显示数据列表 -->
+                        <div class="ChangeTableComponent__content_div" style="display:none;">
+                            <ul class="row">
+                                <li class="col-md-6 col-lg-6">
+                                    <div class="ctable__section">
+                                        <div class="ctable__header">
+                                            <a class="ctable__header_h">
+                                                <i class="iconfont icon-1"></i>
+                                                demo-a-1
+                                            </a>
+                                            <a class="ctable__header_s">
+                                                设置
+                                            </a>
+                                            <a class="ctable__header_d">
+                                                删除
+                                            </a>
+                                        </div>
+                                        <div class="ctable__content">
+                                            <p>
+                                                地域: <span>华东2</span>
+                                            </p>
+                                            <p>
+                                                创建时间: <span>2016-10-14 10:24:23</span>
+                                            </p>
+                                            <p>
+                                                存储类型: <span>标准存储</span>
+                                            </p>
+                                        </div>
+                                        <div class="ctable__footer">
+                                            <div>
+                                                <p>存储量</p>
+                                                <p>
+                                                    <a>367.62MB</a>
+                                                </p>
+                                            </div>
+                                            <div>
+                                                <p>当月公网流出</p>
+                                                <p>
+                                                    <a>0.00Byte</a>
+                                                </p>
+                                            </div>
+                                            <div>
+                                                <p>当月请求次数</p>
+                                                <p>
+                                                    <a>147</a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                    
+                </div>
             </div>
 
         </div>
@@ -536,6 +669,7 @@
     <script src="../scripts/menu.js"></script>
     <script src="../scripts/index.js"></script>
     <script src="../scripts/tableList.js"></script>
+    <script src="../scripts/changeTable.js"></script>
 </body>
 
 </html>
