@@ -1,0 +1,34 @@
+.TabComponent{
+    border: 1px solid #ddd;
+    .nav{
+        background-color: #fbfbfb;
+        li{
+            margin-bottom:0;
+            a{
+                color:#9094a0;
+                padding: 10px 15px;
+                border-radius:0;
+                &:focus{
+                    color:#fff;
+                    background-color: #42485B;
+                    border-bottom:none;
+                }
+                &:hover{
+                    color:#fff;
+                    background-color: #42485B;
+                    border-bottom:none;
+                }
+            }
+        }
+        .active{
+            a{
+                color:#fff;
+                background-color: #42485B;
+                border-bottom:none;
+            }
+        }
+    }
+    .tab-content{
+        padding:30px 15px;
+    }
+}
