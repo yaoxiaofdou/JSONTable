@@ -1,0 +1,93 @@
+.ChangeTableComponent{
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    .ChangeTableComponent__header{
+        border-bottom: 1px solid #ddd;
+        height:40px;
+        overflow: hidden;
+        position: relative;
+        background-color: #42485B;
+        h5{
+            float:left;
+            color:#fff;
+            margin:12px 0 0 15px;
+        }
+        .ChangeTableComponent__changeBtn{
+            display:inline-block;
+            width:40px;
+            height:40px;
+            background-color:#fff;
+            color:#42485B;
+            float:right;
+            line-height:38px;
+            text-align: center;
+            font-size:20px;
+            cursor:pointer;
+            &:hover{
+                background-color:#eee;
+            }
+        }
+    }
+
+    .ChangeTableComponent__content_list{
+        padding:15px;
+        .row{
+            margin:0;
+        }
+    }
+    .ChangeTableComponent__content_div{
+        padding:15px;
+
+        ul{
+            li{
+                list-style:none;
+                margin-bottom:10px;
+                .ctable__section{
+                    border:1px solid #ddd;
+                    .ctable__header{
+                        height:40px;
+                        position: relative;
+                        background-color: #42485B;
+                        padding: 0 0 0 15px;
+                        a{
+                            display: inline-block;
+                            color:#fff;
+                            cursor:pointer;
+                        }
+                        .ctable__header_h{
+                            width:74%;
+                            margin-top:8px;
+                            i{
+                                position: relative;
+                                top: 1px;
+                            }
+                        }
+                        .ctable__header_s{
+                            margin-right:15px;
+                        }
+                    }
+                    .ctable__content{
+                        padding:15px;
+                    }
+                    .ctable__footer{
+                        border-top: 1px solid #ddd;
+                        padding-top: 10px;
+                        div{
+                            display:inline-block;
+                            width: 32.6%;
+                            text-align: center;
+                            p{
+                                width:80%;
+                                overflow:hidden;
+                                text-overflow: ellipsis;
+                            }
+                        }
+                    }
+                }
+                
+            }
+        }
+
+    }
+
+}
