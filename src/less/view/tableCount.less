@@ -1,0 +1,72 @@
+.TableCountComponent{
+
+    .TableCountComponent__header{
+        margin-bottom: 10px;
+        .TableCountComponent__header__form{
+            display:inline-block;
+            .TableCountComponent__header__select{
+                display: inline-block;
+                label{
+                    font-size: 12px;
+                    margin-right:10px;
+                }
+                .form-control{
+                    width:120px;
+                    height: 30px;
+                    display: inline-block;
+                }
+            }
+            .TableCountComponent__header__Data{
+                display: inline-block;
+                label{
+                    margin:0 10px;
+                    font-size: 12px;
+                }
+                input[type="text"]{
+                    width:150px;
+                    height: 30px;
+                    display: inline-block;
+                }
+            }
+            .TableCountComponent__header__search{
+                display:inline-block;
+                padding: 6px 16px;
+                border: 1px solid #ccc;
+                background-color: #f3f3f3;
+                color: #777;
+                margin: 0 10px;
+                cursor:pointer;
+                &:hover{
+                    background-color:#ddd;
+                    color:#777;
+                }
+            }
+        }
+        .TableCountComponent__header_tab{
+            display:inline-block;
+            padding-top: 2px;
+            float:right;
+            a{
+                display:inline-block;
+                padding:6px 16px;
+                background-color: #eee;
+                color:#777;
+                margin-left: 5px;
+                cursor:pointer;
+                &:hover{
+                    background-color:#42485B;
+                    color:#fff;
+                }
+            }
+            .active{
+                background-color:#42485B;
+                color:#fff;
+            }
+        }
+    }
+
+    .TableCountComponent__content{
+
+    }
+
+}
