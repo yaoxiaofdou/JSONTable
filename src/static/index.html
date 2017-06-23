@@ -153,7 +153,7 @@
         <a class="menu-ul-min">
             <i class="iconfont icon-shousuo"></i>
         </a>
-        <div class="nav-title">管理员登录界面</div>
+        <div class="nav-title">管理员界面<!--<a href=""><span class="glyphicon glyphicon-menu-left"></span></a>--></div>
         <div class="nav-list">
             <ul>
                 <li>
@@ -202,15 +202,28 @@
             </div>
             <div class="panel-body">
                 <p class="body-title"><span>Bucket属性</span></p>
-                <div class="toolbars"><button type="button" class="btn btn-success" data-toggle="modal" data-target="#addModal">新建Bucket</button></div>
-                <form action="">
+                <div class="toolbars">
+                    <form action="">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search for..."/>
+                            <span class="input-group-btn">
+                                        <button class="btn btn-default" type="button">Go!</button>
+                                    </span>
+                        </div>
+                    </form>
+                    <div class="right-button">
+                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#addModal">新建Bucket</button>
+                    </div>
+                </div>
+                <!--<div class="toolbars"><button type="button" class="btn btn-success" data-toggle="modal" data-target="#addModal">新建Bucket</button></div>-->
+                <!--<form action="">
                     <div class="input-group">
                         <input type="text" class="form-control" placeholder="Search for..."/>
                         <span class="input-group-btn">
-        <button class="btn btn-default" type="button">搜索</button>
-      </span>
+                            <button class="btn btn-default" type="button">搜索</button>
+                        </span>
                     </div>
-                </form>
+                </form>-->
                 <!-- 表格 组件 -->
                 <div class="TableListComponent">
                     <table class="table table-striped table-condensed table-hover">
@@ -370,19 +383,17 @@
                     </div>
                 </div>
                 <div class="panel-body">
+                    <!--ChangeTable-->
                     <div class="ChangeTableComponent">
                         <div class="ChangeTableComponent__header">
                             <h5>Bucket</h5>
                             <a class="ChangeTableComponent__changeBtn">
                                 <!-- 列表 -->
-                                <i class="iconfont icon-liebiao1"></i>
-                                <!-- 块显 -->
-                                <!--<i class="iconfont icon-liebiao"></i>-->
+                                <i class="glyphicon glyphicon-align-justify"></i>
                             </a>
                         </div>
                         <!-- 表格显示数据列表 -->
                         <div class="ChangeTableComponent__content_list">
-                            
                             <!-- table change 组件 -->
                             <div class="TableListComponent">
                                 <div class="row">
@@ -498,9 +509,7 @@
                                 </li>
                             </ul>
                         </div>
-
                     </div>
-                    
                 </div>
             </div>
             <div class="panel-body">

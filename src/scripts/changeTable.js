@@ -20,14 +20,11 @@ $(function(){
                 if(panel1.css('display')=='none'){
                     panel1.show();
                     panel2.hide();
-                    $icon_table.show();
-                    $icon_div.hide();
-
+                    $(this).find("i").removeClass("glyphicon-th").addClass("glyphicon-align-justify");
                 }else{
                     panel1.hide();
                     panel2.show();
-                    $icon_table.hide();
-                    $icon_div.show();
+                    $(this).find("i").removeClass("glyphicon-align-justify").addClass("glyphicon-th");
                 }
                 
             })
