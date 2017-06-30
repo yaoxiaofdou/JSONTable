@@ -1,4 +1,4 @@
-.TableCountComponent{
+.TableCountComponent, .TableListComponent{
 
     .TableCountComponent__header{
         margin-bottom: 10px;
@@ -68,5 +68,64 @@
     .TableCountComponent__content{
 
     }
-
+    .detail{
+        width: 486px;
+        position: fixed;
+        background-color: #fff;
+        z-index: 100;
+        bottom: 0;
+        top: 0;
+        right: 0;
+        box-shadow: 0 0 40px #999999;
+        display: none;
+        //transition:1s;
+        .heading{
+            width: 100%;
+            height: 60px;
+            border-bottom: 1px solid #e1e6eb;
+            padding: 0 20px;
+            color: #333;
+            line-height: 60px;
+            i{
+                float: right;
+                font-size: 20px;
+                cursor: pointer;
+            }
+        }
+        .detail-content{
+            padding: 20px;
+            .detail-file{
+                width: 100%;
+                height:60px;
+                text-align: center;
+                img{
+                    width: 50px;
+                    height:50px;
+                }
+            }
+            label{
+                text-align: right;
+                color: #666;
+                font-weight: normal;
+            }
+            input{
+                display: inline-block;
+                width: 100px;
+            }
+            button{
+                background-color: #ebebeb;
+            }
+            strong{
+                width: 60%;
+                display: inline-block;
+            }
+            .form-group {
+                margin-top: 8px;
+                margin-bottom: 16px;
+            }
+            .icon-bangzhu{
+                color: #F90;
+            }
+        }
+    }
 }
