@@ -13,7 +13,7 @@
     <!-- 时间选择插件 -->
     <link rel="stylesheet" href="../css/plugins/bootstrap-datepicker.css">
     <!-- iconfont 图标 -->
-    <link rel="stylesheet" href="//at.alicdn.com/t/font_fg28s3h0sqy0t3xr.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_c9m6ce07u89cc8fr.css">
 </head>
 <body>
         <div class="header">
@@ -301,7 +301,7 @@
                                     </tbody>
                                 </table>
                                 <!-- 分页 -->
-                                <nav aria-label="Page navigation" style="text-align:center;">
+                                <!--<nav aria-label="Page navigation" style="text-align:center;">
                                     <div class="col-md-12 col-lg-12">
                                         <div class="col-md-2 col-lg-1">
                                             <label class="table__alldiv">
@@ -328,7 +328,36 @@
                                             </ul>
                                         </div>
                                     </div>
-                                </nav>
+                                </nav>-->
+                            </div>
+                        </div>
+                        <div class="detail">
+                            <div class="heading">
+                                <span class="title">预览</span>
+                                <i class="iconfont icon-guanbi"></i>
+                            </div>
+                            <div class="detail-content">
+                                <form action="" class="form-horizontal">
+                                    <div class="detail-file">
+                                        <img src="../images/logo.png" alt="">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="" class="col-sm-3">文件名称 :</label>
+                                        <div class="col-sm-9"><strong>file.png</strong></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="" class="col-sm-3">文件地址 :</label>
+                                        <div class="col-sm-9"><span>请输入链接有效时间 : </span><input class="form-control" type="text">&nbsp;秒&nbsp;<button class="btn btn-default">获取URL</button><i class="iconfont icon-bangzhu"></i></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="" class="col-sm-3">文件类型 :</label>
+                                        <div class="col-sm-9"><strong>image/png</strong><a href="###">设置HTTP头</a></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="" class="col-sm-3">文件ACL :</label>
+                                        <div class="col-sm-9"><strong>继承Bucket</strong><a href="###">设置读写权限</a></div>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -350,6 +379,7 @@
     <script src="../scripts/tableList.js"></script>
     <script src="../scripts/changeTable.js"></script>
     <script src="../scripts/TableCount.js"></script>
+    <script src="../scripts/details.js"></script>
 </body>
 
 </html>
