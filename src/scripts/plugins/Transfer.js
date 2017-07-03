@@ -17,7 +17,7 @@
                 this.checkBoxEvent();
                 this.allCheckEvent();
                 this.switchEvent();
-                this.checkBoxesDbClick();
+                //this.checkBoxesDbClick();
                 time = null;
             },
             //按钮切换事件
@@ -59,26 +59,35 @@
             //所有标签单击选中事件
             checkBoxEvent : function(){
                 var that = this;
-                this.allCheckedBoxes.on("click",function(){
+                $(".ty-tree-select").on("click",this.allCheckedBoxes,function(e){
                     clearTimeout(time);
-                    time = setTimeout(function(){
-                        var classNames = that.checkTagClass($(this));
-                        if($(this).is(":checked")){           
-                            that.removeActiveEvent(classNames[0],"disabled");
-                            that.addActiveEvent(classNames[0],"active");
-                            if(!$("."+classNames[1]).hasClass("active")){
-                                that.addActiveEvent(classNames[1],"disabled");
-                             } 
-                        }else{
-                            var siblingsTag = $(this).parents(".ty-tree-div").parent("li").siblings("li").find(".tyue-checkbox-input");
-                            if(!siblingsTag.is(":checked")){
-                                that.removeActiveEvent(classNames[0],"active");
-                                that.addActiveEvent(classNames[0],"disabled");
-                                $(this).parents(".ty-transfer").find(".transfer-all-check").removeAttr("checked","checked")
-                            }
-                        }
+                    //console.log(e.target)
+                    //console.log($(this))
+                    
+                    var checkSwitch = false;
+                    
+                    var classNames = that.checkTagClass($(this));
 
-                    }.bind(this),200);
+                    $(this).find('li').each(function(index,item){
+                        //console.log($(item).find('.tyue-checkbox-input').is(":checked"));
+                        if($(item).find('.tyue-checkbox-input').is(":checked")){
+                            checkSwitch = true;
+                        }
+                    });
+                    if(checkSwitch){
+                        that.removeActiveEvent(classNames[0],"disabled");
+                        that.addActiveEvent(classNames[0],"active");
+                        if(!$("."+classNames[1]).hasClass("active")){
+                            that.addActiveEvent(classNames[1],"disabled");
+                        }
+                    }else{
+                        var siblingsTag = $(this).parents(".ty-tree-div").parent("li").siblings("li").find(".tyue-checkbox-input");
+                        if(!siblingsTag.is(":checked")){
+                            that.removeActiveEvent(classNames[0],"active");
+                            that.addActiveEvent(classNames[0],"disabled");
+                            $(this).parents(".ty-transfer").find(".transfer-all-check").removeAttr("checked","checked")
+                        }
+                    }
 
                 });     
             },
