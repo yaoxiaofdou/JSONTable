@@ -224,9 +224,9 @@
                         </span>
                     </div>
                 </form>-->
-                <!-- 表格 组件 -->
-                <div class="TableListComponent">
-                    <table class="table table-striped table-condensed table-hover">
+                <!-- 表格 组件 radio : true(单选) or false(多选) -->
+                <div class="TableListComponent" radio="false">
+                    <table class="table table-condensed table-hover">
                         <thead>
                         <tr>
                             <th></th>
@@ -273,7 +273,7 @@
                         <tr>
                             <td>
                                 <label>
-                                    <input type="checkbox" name="items"/>
+                                    <input type="checkbox" class="TableListComponent-checkbox" name="items"/>
                                 </label>
                             </td>
                             <td>K002123</td>
@@ -289,7 +289,7 @@
                         <tr>
                             <td>
                                 <label>
-                                    <input type="checkbox" name="items"/>
+                                    <input type="checkbox" class="TableListComponent-checkbox" name="items"/>
                                 </label>
                             </td>
                             <td>K002123</td>
