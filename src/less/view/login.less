@@ -1,63 +1,97 @@
+html,body{
+  width:100%;
+  height:100%;
+}
+
 .login-body{
-  background-color: #00b4ef;
-  color: #D5D6E2;
-  .form-horizontal {
-    background: #fff;
-    padding-bottom: 80px;
-    margin-top: 20px;
-    border-radius: 15px;
-    text-align: center;
-    .heading {
-      display: block;
-      font-size: 35px;
-      font-weight: 700;
-      padding: 35px 0;
-      border-bottom: 1px solid #f0f0f0;
-      margin-bottom: 30px;
+  width:100%;
+  height:100%;
+  position:relative;
+  #particles{
+    width:100%;
+    height:100%;
+    background-color: #0d0f10;
+  }
+  .qishonLogin__header{
+    position:absolute;
+    top:0;
+    width:100%;
+    height:50px;
+    border-bottom:1px solid #717171;
+    h1{
+      color:#eee;
+      font-size:20px;
+      line-height:50px;
+      padding: 0 20px;
     }
-    .login-form-group {
-      padding: 0 40px;
-      margin: 0 0 25px 0;
-      position: relative;
-      .login-form-control{
-        background: #f0f0f0;
-        border: none;
-        border-radius: 20px;
-        box-shadow: none;
-        padding: 3px 20px 0 45px;
-        width: 100%;
-        height: 40px;
-      }
-      i{
-        position: absolute;
-        top: 12px;
-        left: 60px;
-        font-size: 17px;
-        color: #c8c8c8;
-      }
-      a{
-        display: inline-block;
-        position: absolute;
-        top: 6px;
-        right: 60px;
-        font-size: 20px;
-        color: #808080;
-        text-decoration: none;
-      }
-    }
-    .login-btn{
+  }
+
+  .qishonLogin{
+    .form-horizontal {
+      position: absolute;
+      top: 25%;
+      right: 5%;
+      width:400px;
+      height:400px;
+      background: rgba(255,255,255,0.3);
+      color:#eee;
+      padding-bottom: 80px;
       text-align: center;
-      .login-submit{
-        //float: right;
-        width: 100px;
-        font-size: 14px;
-        color: #fff;
-        background: #00b4ef;
-        border-radius: 30px;
-        padding: 10px 25px;
-        border: none;
-        text-transform: capitalize;
+      .heading {
+        text-align: left;
+        display: block;
+        font-size: 24px;
+        font-weight: 300;
+        padding:48px 36px 48px;
+      }
+      .login-form-group {
+        padding: 0 40px;
+        margin: 0 0 25px 0;
+        position: relative;
+        .login-form-control{
+          background: #f0f0f0;
+          border: none;
+          box-shadow: none;
+          text-indent: 2.5em;
+          width: 100%;
+          height: 40px;
+        }
+        i{
+          position: absolute;
+          top: 10px;
+          left: 60px;
+          font-size: 17px;
+          color: #c8c8c8;
+        }
+        a{
+          display: inline-block;
+          position: absolute;
+          top: 6px;
+          right: 60px;
+          font-size: 20px;
+          color: #808080;
+          text-decoration: none;
+        }
+      }
+      .login-btn{
+        text-align: center;
+        .login-submit{
+          width: 100%;
+          font-size: 14px;
+          color: #fff;
+          background: #00b4ef;
+          padding: 10px 25px;
+          border: none;
+          text-transform: capitalize;
+        }
+      }
+      .reset-register{
+        a{
+          font-size:13px;
+          color: rgba(222, 222, 222, 0.59);
+        }
       }
     }
   }
+
 }

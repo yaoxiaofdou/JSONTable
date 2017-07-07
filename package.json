@@ -26,6 +26,7 @@
     "gulp-sourcemaps": "*",
     "gulp-uglify": "*",
     "imagemin-pngcrush": "^5.1.0",
+    "qiniu": "^7.0.4",
     "run-sequence": "^1.2.2",
     "tiny-lr": "*"
   },
