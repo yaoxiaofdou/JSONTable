@@ -5,7 +5,7 @@
 
 ### DEMO
 
-[点击查看]: http://www.inamorato.cn/jsontable/static/	"demo"
+[点击查看-demo](http://www.inamorato.cn/jsontable/static/)
 
 ## 是否还在为在表格中显示JSON数据不友好而烦恼？ ##
 
