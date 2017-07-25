@@ -1,0 +1,111 @@
+.response-table{
+    margin:100px auto;
+    width: 1000px;
+
+    .response-table__btn{
+        color: #333;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        touch-action: manipulation;
+        cursor: pointer;
+        display: inline-block;
+        padding: 6px 12px;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.42857143;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+    }
+
+    .div-table {
+        width: 100%;
+        padding: 0;
+        .div-table-header{
+            li {
+                position: relative;
+                padding: 4px 0 4px 10px;
+                box-sizing: border-box;
+                border-top: 1px solid #ccc;
+                border-right: 1px solid #ccc;
+                border-bottom: 1px solid #ccc;
+                height: 32px;
+                line-height: 20px;
+                outline: none; 
+                background-color: #fff;
+                list-style:none;
+                overflow:hidden;
+                &:first-child {
+                    border-left: 1px solid #ccc;
+                }
+            }
+        }
+        .placeholder-response-args{
+            margin-bottom:0;
+            li {
+                position: relative;
+                padding: 3px 0 2px 6px;
+                box-sizing: border-box;
+                border-bottom: 1px solid #ccc;
+                border-right: 1px solid #ccc;
+                height: 32px;
+                line-height: 20px;
+                outline: none; 
+                background-color: #fff;
+                overflow: hidden;
+                input{
+                    border-color: transparent;
+                    width: 98%;
+                }
+                .name{
+                    overflow: visible;
+                    position: relative;
+                }
+                select{
+                    margin: 2px;
+                }
+                &:first-child {
+                    border-left: 1px solid #ccc;
+                }
+            }
+        }
+    }
+    .div-table-section{
+        .div-table-line{
+            .cb{
+                margin:0;
+                li{
+                    list-style:none;
+                    position: relative;
+                    i{
+                        font-size: 16px;
+                        line-height: 26px;
+                    }
+                    .toggleItemChild{
+                        position: absolute;
+                        left: -20px;
+                    }
+                    &:first-child{
+                        overflow: inherit;
+                        .item-plus{
+                            top:0;
+                            margin-left:6px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .col-sm-12{
+        padding:0;
+    }
+    .response-table__patternDiv{
+        padding: 0 40px;
+        margin-bottom: 10px;
+    }
+    .response-table__panel--button{
+        margin-top:10px;
+        padding: 0 40px;
+    }
+}
